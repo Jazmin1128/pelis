@@ -1,0 +1,223 @@
+
+/*root se utiliza para poder guardar variables ya que al ser 
+una accion que no esta en html podemos almacenar como en este ejemplo 
+una paleta de colores y mandarlos a llamar cuando los necesitemos 
+con la sintaxis color: var(--primario);
+*/
+:root{
+
+--blanco:#FFFFFF;
+--negro:#212121;
+--primario:#FFC107;
+--secundario:#004ccf;
+--gris: #757575;
+--aqua: aqua;
+}
+
+
+/*las siguientes lineas seleccionamos el html y el body para reiniciar el tamaño 
+ya qu eeto nos permitira adaptar nuestros textos con medida rem para que se adapten 
+en cualquier dispositivo donde se vaya a utilizar nuestra pagina web */
+
+/*rem es una medida que se usa en lugar de pixeles ya que es mas adaptable 
+a todo tipo de pantallas tablets laptops telefonos etc.... */
+
+html{
+	font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+
+
+*, *:before, *:after{ /*el * dice selecciona todos los elemntos del html y aplocales el box sizing*/
+
+	box-sizing: inherit; /*hace que no afecte mi imagen dentro de un contenedor*/
+}
+
+
+body{
+
+font-size: 16px;
+
+font-family: Arial; /*la propiedad family sirve para cambiar el tipo de fuente de un texto*/
+
+}
+
+.tituloarri{
+
+/*este selector nos ayuda a extender el color hacia los lados 
+en nuestra pagina o en este caso en nuestro contenedor */
+background-color: var(--negro);/*cambiar color de fondo*/ 	
+color: var(--blanco);
+font-size: 1.3rem;
+padding: 0.1rem;
+
+}
+
+
+@media (min-width:768px ){/*tamaño de pantalla aqui se ejecutara mi codigo css*/
+
+/*aqui estamos regrsando a la medida por default para los navegardores mientras que la otra navegacion principal 
+pasa a ser para dispositivos como tablets o celulares */
+
+.teca{
+
+background-image: url(../img/logo.png);
+
+background-repeat: no-repeat;/*aqui usamos esta linea como estabilizador para que la imagenno se repita en el contenedor*/
+background-position: left top;
+
+height: 7rem; /*cambiamos el tamaño de la imagen a aplacer*/
+
+
+}
+
+}
+
+
+h1{
+font-size: 3.4;
+}
+
+h2{
+font-size: 2.4;
+}
+
+h3{
+font-size: 1.4;
+}
+
+h1,h2,h3 {
+	text-align: center;
+}
+
+span{
+	font-size: 1.8rem;
+}
+
+
+.contenedor{
+
+
+max-width: 120rem; /*definimos los pixeles de el contenedor con rem max se usa para estabilizar el contenedor y que sea mas dinamico 
+y podemos pover el texto dentro del contenedor */
+/*estas lineas de codigo son para centrar un contenedor*/
+/*margin-top: 0;*/ /*margin es oara manipular los contenedores en la parte de arriba*/
+/*margin-right: auto;*/ /*mover a la derecha */
+/*margin-bottom: 0;*/ /*mover hacia abajo */
+/*margin-left: auto;*/ /*mover hacia la izquierda*/
+
+margin: 0 auto ; /*este margin representa todo lo de 
+arriba en una simple linea de codigo si hay dos autos podemos 
+usar uno solo */
+
+}
+
+
+.nav-bg{
+
+/*este selector nos ayuda a extender el color hacia los lados 
+en nuestra pagina o en este caso en nuestro contenedor */
+background-color: var(--negro);/*cambiar color de fondo*/ 	
+
+
+}
+
+.navegacion-principal{
+
+padding: 1.0rem;/*pading se utiliza para colorear todo el 
+contenedor al momento de agrandarlo o reducirlo */
+display: flex;/*aqui llo que estamos haciendo es habilitar 
+flexbox*/
+flex-direction: column;/*flex direction nos ayuada a direccionar nuestro texto ya sea de arriba hacia abajo 
+o de izquierda a a derecha*/
+align-items: center; /*se usa para centrar en telefonos o centrar por default*/
+
+}
+
+@media (min-width:768px ){/*tamaño de pantalla aqui se ejecutara mi codigo css*/
+
+/*aqui estamos regrsando a la medida por default para los navegardores mientras que la otra navegacion principal 
+pasa a ser para dispositivos como tablets o celulares */
+
+.navegacion-principal{ /*aqui ereda todos los atributos ya definidos en el primer selector .navegacion-principal
+	por lo cual no hay necesidad de reescribir el codigo solo definirlo*/
+flex-direction: row;
+justify-content: space-around; /*distribuye el texto horizontalmente
+y con una separacion entre cada texto legante 
+beetwen te ayuda a mandar uno a cada ezquina en este caso un 
+texto */
+
+}
+
+}
+
+
+
+
+
+.navegacion-principal a{ /*este constructor es para los enlaces diferenciados por la letra a */
+display: block;
+text-align: center;
+
+color: var(--blanco);
+text-decoration: none;/*nos ayuda a quitar la linea de abajo de los 
+enlaces*/
+font-size: 1.7rem;
+font-weight: bold; /*sirve para poner las letras en negritas*/
+/*padding se usa poara dar dimencuones a un texto como un tipo contenedor*/
+padding: 1rem;
+}
+
+
+/*mas efectos sobre los links */
+.navegacion-principal a:hover{  /*efecto hover de posicionamiento sobre objeto efecto de animacion*/
+border-radius: 5px;
+background-color: var(--aqua);
+color: var(--negro); /*aqui se hace el efecto donde al mover el cursor sobre los enlaces cambian a color negro las letras
+o al color que nosotros elijamos */
+
+}
+
+
+
+@media (min-width:480px ){/*tamaño de pantalla aqui se ejecutara mi codigo css*/
+
+
+}
+
+.hero {
+
+background-image: url(../img/TECA.jpeg); /*traemos la imagen con esta propiedad url*/
+background-repeat: no-repeat;/*aqui usamos esta linea como estabilizador para que la imagenno se repita en el contenedor*/
+background-size: cover; /*esta linea cover hace que la imagen ocupe todo el contenedor*/
+height: 680px; /*cambiamos el tamaño de la imagen a aplacer*/
+position: relative; /*esta linea de codigo va en la clase padre */
+
+}
+
+.contenido-hero{
+
+position: absolute;/*esta linea se coloca en las clases hijos donde se colocara el efecto sommbreado en la imagen*/
+background-color: rgb( 0 0 0 / 40% ); /*los primeros ceros son para definir el color y el % es para 
+definir el nivel de transparencia para esto se usa la propiedad rgb()*/
+width: 100%; 
+height: 100%; /*usamos width y heigth para cubrir todo el contenedor*/
+display: flex;
+flex-direction: column; /*poner un texto de arriba hacia abajo*/
+align-items: center;/*alinear el contenido o texto*/
+justify-content: center; /*alineamos el texto centrado pero ahora hacia abajo*/
+/*alinear vertical y horizontalmente*/
+
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+
+color: var(--blanco);
+
+}
+
+
+
+
